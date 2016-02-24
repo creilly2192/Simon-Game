@@ -133,17 +133,16 @@ $(document).ready(function() {
     });
   }
 
+  //light up tiles and add sound when tile is clicked
   $('#r, #y, #g, #b').on('click', function() {
     animate(this.id);
   });
+
+  //start game
   gameControl.on('click', function() {
-    //button value changes to "restart game"
-      gameControl.html('Restart Game');
-      gameControl.on('click', function() {
-        //location.reload();
-      });
       settings.level++;
       getTile();
+      //update current level
       currentLevel.text(settings.level);
     });
 
